@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
+  # Last 7 days of Google Analytics visitor counts, per site.
+  get "analytics/garirbazar" => "analytics#garirbazar"
+
   # Defines the root path route ("/")
   # root "posts#index"
+  root "application#home"
 end
